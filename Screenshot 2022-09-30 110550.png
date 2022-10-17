@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "17a7bbc8-700a-46ac-9635-892e2718c595",
+		"name": "Lusso",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "USERS",
+			"item": [
+				{
+					"name": "LOGIN USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"cardo@gmail.com\",\r\n    \"password\":\"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/users/login"
+					},
+					"response": []
+				},
+				{
+					"name": "GET USER PROFILE",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNGNiOTExY2JkZmI1MGE4OGMzZjZhMCIsImlhdCI6MTY2NTk3NjA3MiwiZXhwIjoxNjY4NTY4MDcyfQ.7U_Nb6lA8gEf5wCMoJv47oL7QWqWKny1N_R4dmqY76c"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/users/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL USERS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNGNiOTExY2JkZmI1MGE4OGMzZjY5ZSIsImlhdCI6MTY2NTk3Njc5OSwiZXhwIjoxNjY4NTY4Nzk5fQ.XvcFEne4VgHwuNL4SvICeJp_PzSHIqXOa6el-HKMweg"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:5000/api/users"
+					},
+					"response": []
+				},
+				{
+					"name": "REGISTER A NEW USER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Ahmad ismael\",\r\n    \"address\":\"Zamboanga city\",\r\n    \"email\":\"ismael@gmail.com\",\r\n    \"password\":\"1234\",\r\n    \"isAdmin\":true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/api/users"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GET all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:5000/api/products"
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": "http://localhost:5000/api/products/1"
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:5000/api/products/1"
+			},
+			"response": []
+		},
+		{
+			"name": "GET SINGLE PRODUCT",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:5000/api/products/634c52f03c6c4021769ad7c3"
+			},
+			"response": []
+		}
+	]
+}
