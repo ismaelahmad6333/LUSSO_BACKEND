@@ -1,5 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const Product = require("../models/productModel");
+
 //// - GET ALL PRODUCTS
 //// - GET METHOD | /api/products - PUBLIC ROUTE
 const getProducts = asyncHandler(async (req, res) => {
@@ -43,7 +44,7 @@ const createProduct = asyncHandler(async (req, res) => {
     category: req.body.category,
     brand: req.body.brand,
     stock: req.body.stock,
-    image: req.body.image,
+    image: req.file.path,
     rating: req.body.rating,
     user: req.user._id,
   });

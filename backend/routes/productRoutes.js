@@ -1,4 +1,5 @@
 const express = require("express");
+const upload = require("../config/multer");
 const router = express.Router();
 const {
   getProducts,
@@ -9,7 +10,10 @@ const {
 } = require("../controllers/productController");
 const { protect, admin } = require("../middlewares/authMiddleware");
 
-router.route("/").get(getProducts).post(protect, admin, createProduct);
+router
+  .route("/")
+  .get(getProducts)
+  .post(protect, admin, upload.single("image"), createProduct);
 router
   .route("/:id")
   .delete(protect, admin, deleteProduct)
